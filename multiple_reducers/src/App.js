@@ -91,7 +91,10 @@ const App = () => {
     rice: riceReducer,
   });
 
-  let store = createStore(rootReducer); // rootReducer is the name of our future multiple reducer function
+  let store = createStore(
+    rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  ); // rootReducer is the name of our future multiple reducer function
 
   //step3
   store.subscribe(() => console.log(store.getState()));
